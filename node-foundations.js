@@ -8,12 +8,16 @@
 // 2. Direct Execution //at top
 
 // 3.using the global object
-const {	node, v8} = global.process.versions; //Destructuring
-console.log(`Node.js version: ${node}\nV8 version: ${v8}`);//Template Literal
+// const {	node, v8} = global.process.versions; //Destructuring
+// console.log(`Node.js version: ${node}\nV8 version: ${v8}`);//Template Literal
 
 
 // 4.use different versions of node for this project and keep ES6
 		// for older versions of node you must specify Harmony type_of i.e. --harmony_destructuring
 
+// 5. Command-line arguments
+let [,,...rest] = process.argv //get arguments from argv
+rest[0] === undefined ? console.log(0) // 0 if nothing is passed
+	: console.log(rest.map((str) => Number(str)).reduce((a,b) => (a) + (b))); // make numbers and add them
 
 
